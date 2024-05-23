@@ -16,7 +16,7 @@ def generate_pdf(content, name):
     pdf.image('logo_qq.png', x=10, y=8, w=30)  # Assume que logo_qq.png está no diretório de trabalho
     pdf.set_xy(10, 40)
     pdf.set_font("Arial", 'B', 16)
-    pdf.cell(0, 10, f"Dicas financeiras do Guru Financeiro da QueroQuitar para {name}", 0, 1, 'C')
+    pdf.cell(0, 10, f"Dicas do Guru Financeiro da QueroQuitar para {name}", 0, 1, 'C')
     pdf.ln(20)
     pdf.set_font("Arial", size=12)
     pdf.multi_cell(0, 10, content)
@@ -66,8 +66,8 @@ def main():
         """
         <style>
         .stApp {
-            #background-color: #FF7F00;
-            background-color: #6E3903;
+            background-color: #FF7F00;
+            #background-color: #6E3903;
         }
         </style>
         """,
@@ -83,16 +83,16 @@ def main():
         location = st.selectbox("Onde mora? *", ["Selecione", "No Brasil", "Fora do Brasil"])
         state = st.selectbox("Em qual estado brasileiro? *", ["Selecione"] + ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"])
         job = st.selectbox("Sobre o seu trabalho: *", ["Selecione", "Desempregado(a)", "Aposentado(a)", "Beneficiário(a) de algum programa do governo", "Funcionário Público", "Profissional CLT", "Profissional PJ", "Empreendedor(a)", "Em transição de carreira"])
-        income = st.selectbox("Sobre sua faixa de renda: *", ["Selecione", "Não possuo renda", "Até 1 salário mínimo", "Até 2 salários mínimos", "Até 3 salários mínimos", "4 a 8 salários mínimos", "9 a 12 salários mínimos", "13 a 20 salários mínimos", "Mais do que 20 salários mínimos"])
-        stability = st.selectbox("Sobre a estabilidade da sua renda: *", ["Selecione", "Não possuo renda","Minha renda é fixa", "Minha renda é variável", "Possuo tanto renda fixa quanto renda variável", "Minha renda é sazonal (temporária)"])
-        composition = st.selectbox("Sobre a composição da sua renda: *", ["Selecione", "Não possuo renda","Toda a minha renda vem do meu trabalho ou do governo", "Além da renda do trabalho, recebo renda de investimentos", "Além da renda do trabalho, recebo renda de aluguel de imóvel", "Além da renda do trabalho, recebo renda de outras fontes (não listadas nas opções anteriores)"])
+        income = st.selectbox("Sobre sua faixa de renda mensal: *", ["Selecione", "Não possuo renda", "Até 1 salário mínimo", "Até 2 salários mínimos", "Até 3 salários mínimos", "4 a 8 salários mínimos", "9 a 12 salários mínimos", "13 a 20 salários mínimos", "Mais do que 20 salários mínimos"])
+        stability = st.selectbox("Sobre a estabilidade da sua renda mensal: *", ["Selecione", "Não possuo renda","Minha renda é fixa", "Minha renda é variável", "Possuo tanto renda fixa quanto renda variável", "Minha renda é sazonal (temporária)"])
+        composition = st.selectbox("Sobre a composição da sua renda mensal: *", ["Selecione", "Não possuo renda","Toda a minha renda vem do meu trabalho ou do governo", "Além da renda do trabalho, recebo renda de investimentos", "Além da renda do trabalho, recebo renda de aluguel de imóvel", "Além da renda do trabalho, recebo renda de outras fontes (não listadas nas opções anteriores)"])
         assets = st.multiselect("Sobre o seu patrimônio (responda mais de uma opção se desejar): *", ["Não possuo nenhum bem, como casa, carro ou investimentos", "Possuo casa", "Possuo carro", "Possuo investimentos", "Possuo negócio próprio", "Possuo obras de arte ou bens de valor"])
-        expenses = st.selectbox("Sobre os seus gastos: *", ["Selecione", "Sempre gasto mais do que ganho", "Quase sempre gasto mais do que ganho", "Consigo, pelo menos, pagar todas as dívidas, mas não sobra nada ou quase nada", "Consigo economizar algum valor relevante"])
-        spending = st.multiselect("Onde estão os seus gastos (responda mais de uma opção se desejar): *", ["Aluguel", "Farmácia", "Supermercado", "Transporte público", "Plano de celular", "Plano de internet em casa", "Serviços de entretenimento (netflix, disney+ etc)", "Viagens", "Cultura", "Educação", "Pagamento de dívidas em geral que não consegui pagar até o vencimento"])
+        expenses = st.selectbox("Sobre os seus gastos mensais: *", ["Selecione", "Sempre gasto mais do que ganho", "Quase sempre gasto mais do que ganho", "Consigo, pelo menos, pagar todas as dívidas, mas não sobra nada ou quase nada", "Consigo economizar algum valor relevante"])
+        spending = st.multiselect("Onde estão os seus gastos mensais (responda mais de uma opção se desejar): *", ["Aluguel", "Farmácia", "Supermercado", "Transporte público", "Plano de celular", "Plano de internet em casa", "Serviços de entretenimento (netflix, disney+ etc)", "Viagens", "Cultura", "Educação", "Pagamento de dívidas em geral que não consegui pagar até o vencimento"])
         short_term = st.multiselect("Objetivos financeiros para o curto prazo (em até 6 meses): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
         medium_term = st.multiselect("Objetivos financeiros para o médio prazo (de 6 meses a 1 ano): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
         long_term = st.multiselect("Objetivos financeiros para o longo prazo (Mais do que 1 ano): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
-        emergency = st.selectbox("Emergência Financeira: Você possui algum fundo de emergência ou capacidade de lidar com imprevistos financeiros? *", ["Selecione", "Sim", "Não"])
+        emergency = st.selectbox("Emergência Financeira: Você possui algum fundo de emergência/reserva ou capacidade para lidar com imprevistos financeiros? *", ["Selecione", "Sim", "Não"])
         knowledge = st.selectbox("Qual o seu nível de conhecimento com conceitos de educação financeira? *", ["Selecione", "Nenhum", "Pouco", "Intermediário", "Avançado"])
 
         acceptance = st.checkbox("Aceito fornecer meus dados em troca de dicas financeiras personalizadas.", key="acceptance")
