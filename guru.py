@@ -66,8 +66,8 @@ def main():
         """
         <style>
         .stApp {
-            background-color: #FF7F00;
-            #background-color: #6E3903;
+            #background-color: #FF7F00;
+            background-color: #6E3903;
         }
         </style>
         """,
@@ -86,12 +86,12 @@ def main():
         income = st.selectbox("Sobre sua faixa de renda mensal: *", ["Selecione", "Não possuo renda", "Até 1 salário mínimo", "Até 2 salários mínimos", "Até 3 salários mínimos", "4 a 8 salários mínimos", "9 a 12 salários mínimos", "13 a 20 salários mínimos", "Mais do que 20 salários mínimos"])
         stability = st.selectbox("Sobre a estabilidade da sua renda mensal: *", ["Selecione", "Não possuo renda","Minha renda é fixa", "Minha renda é variável", "Possuo tanto renda fixa quanto renda variável", "Minha renda é sazonal (temporária)"])
         composition = st.selectbox("Sobre a composição da sua renda mensal: *", ["Selecione", "Não possuo renda","Toda a minha renda vem do meu trabalho ou do governo", "Além da renda do trabalho, recebo renda de investimentos", "Além da renda do trabalho, recebo renda de aluguel de imóvel", "Além da renda do trabalho, recebo renda de outras fontes (não listadas nas opções anteriores)"])
-        assets = st.multiselect("Sobre o seu patrimônio (responda mais de uma opção se desejar): *", ["Não possuo nenhum bem, como casa, carro ou investimentos", "Possuo casa", "Possuo carro", "Possuo investimentos", "Possuo negócio próprio", "Possuo obras de arte ou bens de valor"])
+        assets = st.multiselect("Sobre o seu patrimônio (selecione mais de uma opção se desejar): *", ["Não possuo nenhum bem, como casa, carro ou investimentos", "Possuo casa", "Possuo carro", "Possuo investimentos", "Possuo negócio próprio", "Possuo obras de arte ou bens de valor"])
         expenses = st.selectbox("Sobre os seus gastos mensais: *", ["Selecione", "Sempre gasto mais do que ganho", "Quase sempre gasto mais do que ganho", "Consigo, pelo menos, pagar todas as dívidas, mas não sobra nada ou quase nada", "Consigo economizar algum valor relevante"])
-        spending = st.multiselect("Onde estão os seus gastos mensais (responda mais de uma opção se desejar): *", ["Aluguel", "Farmácia", "Supermercado", "Transporte público", "Plano de celular", "Plano de internet em casa", "Serviços de entretenimento (netflix, disney+ etc)", "Viagens", "Cultura", "Educação", "Pagamento de dívidas em geral que não consegui pagar até o vencimento"])
-        short_term = st.multiselect("Objetivos financeiros para o curto prazo (em até 6 meses): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
-        medium_term = st.multiselect("Objetivos financeiros para o médio prazo (de 6 meses a 1 ano): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
-        long_term = st.multiselect("Objetivos financeiros para o longo prazo (Mais do que 1 ano): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
+        spending = st.multiselect("Onde estão os seus gastos mensais (selecione mais de uma opção se desejar): *", ["Aluguel", "Farmácia", "Supermercado", "Transporte público", "Plano de celular", "Plano de internet em casa", "Serviços de entretenimento (netflix, disney+ etc)", "Viagens", "Cultura", "Educação", "Pagamento de dívidas em geral que não consegui pagar até o vencimento"])
+        short_term = st.multiselect("Objetivos financeiros para o curto prazo - em até 6 meses (selecione mais de uma opção se desejar): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
+        medium_term = st.multiselect("Objetivos financeiros para o médio prazo - 6 meses a 1 ano (selecione mais de uma opção se desejar): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
+        long_term = st.multiselect("Objetivos financeiros para o longo prazo - mais do que 1 ano (selecione mais de uma opção se desejar): *", ["Pretendo pagar minhas dívidas", "Pretendo quitar meu imóvel", "Pretendo quitar meu carro", "Pretendo quitar meus estudos", "Quero começar a investir", "Ampliar meus investimentos", "Outro"])
         emergency = st.selectbox("Emergência Financeira: Você possui algum fundo de emergência/reserva ou capacidade para lidar com imprevistos financeiros? *", ["Selecione", "Sim", "Não"])
         knowledge = st.selectbox("Qual o seu nível de conhecimento com conceitos de educação financeira? *", ["Selecione", "Nenhum", "Pouco", "Intermediário", "Avançado"])
 
